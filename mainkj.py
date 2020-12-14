@@ -10,6 +10,7 @@ class childWindow(QDialog, Ui_Dialog):
     def __init__(self):
         super(childWindow, self).__init__()
         # self.setWindowTitle("串口设置")
+        self.setWindowFlags(QtCore.Qt.Window)
         self.setupUi(self)
 
 # 主窗口继承类
@@ -105,6 +106,9 @@ class mainwindow(QtWidgets.QMainWindow, Ui_mywindow):
         # self.l19.setEnabled(False)
         # self.l20.setEnabled(False)
         # self.l21.setEnabled(False)
+        self.textEdit111.setPlainText('串口打开成功！\n设备连接成功！')
+
+
 
 
 
@@ -118,6 +122,6 @@ if __name__ == '__main__':
     app.setWindowIcon(QIcon('./11.png'))
     main_window = mainwindow()
     child_window = childWindow()
-    main_window.pushButton_6.clicked.connect(child_window.show)  # 绑定主窗口的按钮事件为显示子窗口
+    main_window.pushButton_177.clicked.connect(child_window.show)  # 绑定主窗口的按钮事件为显示子窗口
     main_window.show()
     sys.exit(app.exec())
